@@ -14,8 +14,8 @@
 
 
 <h2>Let's start vote-trading!</h2>
-<form action="/create" id="main-form">
-
+<form action="/voters" method="POST" id="main-form">
+  <input name="authenticity_token" value="<%= form_authenticity_token() %>" type="hidden">
   <div id="form-part1">
     <label>I don't want Trump to win, but I want to vote for </label>
     <br/>
@@ -90,11 +90,11 @@
 
   <div id="form-part3">
     <label>My email is:
-      <input type="text" name="email" placeholder="email">
+      <input type="text" name="email" placeholder="email" required>
     </label>
   </div>
 
-  <button>Submit</button>
+  <button id="btn-submit">Submit</button>
 </form>
 
 
@@ -320,11 +320,13 @@
         inputUserState = $('select[name="user_state"]'),
         usStatesAbbreviation = "",
         formPt2 = $('#form-part2'),
-        formPt3 = $('#form-part3');
+        formPt3 = $('#form-part3'),
+        btnSubmit = $('#btn-submit');
 
     /* hide form parts */
     formPt2.hide();
     formPt3.hide();
+    btnSubmit.hide();
 
     /* PART 2 */
     /* bind value change for 3rd party canddiates */
@@ -339,12 +341,23 @@
     /* bind value change for user states */
     inputUserState.change(function(){
       formPt3.hide();
+      btnSubmit.hide();
+
       setInputUserState(inputUserState);
-      formPt3.show();      
+
+      formPt3.show(); 
+      btnSubmit.show();     
     });
+
+
     
+    /* SUBMIT */
     /* bind submit: make sure all thigns are okay to send */
 
+    btnSubmit.click(function(){
+      checkSubmit();
+      return false;
+    });
   });
 
   function setInputUserState(inputUserState) {
@@ -357,10 +370,6 @@
 
     /* update message on screen */
     $('#message-to-user').html(msgToUser);
-
-    /* unhide inputs */
-    //email
-    //candidate
   }
 
   function checkStateColor(userStateAbbrev) {
@@ -405,6 +414,14 @@
 
   function showFormPt3() {
 
+  }
+
+  function checkSubmit() {
+    if ( $('select["user_state"]').val() !== "" && $('input[name="email"]').val() !== "" ) {
+      console.log('yay');
+    } else {
+      alert( 'Please fill out the entire form!');
+    }
   }
 
 
