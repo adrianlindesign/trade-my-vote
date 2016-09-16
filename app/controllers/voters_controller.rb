@@ -7,7 +7,7 @@ class VotersController < ApplicationController
       paired: false
     )
 
-    redirect_to '/'
+    render :thankyou
   end
 
   def match
