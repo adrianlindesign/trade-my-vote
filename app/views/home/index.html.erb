@@ -5,75 +5,94 @@
   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra interdum sollicitudin. Duis ornare erat ac nulla tempor, id semper elit laoreet. Sed velit elit, fermentum vel porta ac, egestas non urna. Ut enim lorem, vehicula ac tristique eget, hendrerit maximus nibh. Nunc at sollicitudin magna. Fusce sit amet dignissim lacus. Ut scelerisque neque quis vehicula volutpat. Quisque non justo varius nunc scelerisque lacinia. Duis in ullamcorper mauris, eget sollicitudin libero. Maecenas in justo blandit velit auctor consequat. Phasellus auctor rutrum scelerisque. In lobortis nec tortor eu efficitur. Integer lacus purus, accumsan eu arcu sit amet, tempor sagittis nunc. Vestibulum et quam in turpis pellentesque dapibus. Nam quis nibh feugiat, suscipit sem in, scelerisque quam.
 </p>
 
+<p>
+  HOW THIS WORKS:
+  blah blah blah
+</p>
+
 <!-- insert map of us states -->
 
 
 <h2>Let's start vote-trading!</h2>
-<form action="/create">
+<form action="/create" id="main-form">
 
-  <label> I live in:
-    <select name="user_state">
-      <option value="AL">AL</option>
-      <option value="AK">AK</option>
-      <option value="AR">AR</option>
-      <option value="AZ">AZ</option>
-      <option value="CA">CA</option>
-      <option value="CO">CO</option>
-      <option value="CT">CT</option>
-      <option value="DC">DC</option>
-      <option value="DE">DE</option>
-      <option value="FL">FL</option>
-      <option value="GA">GL</option>
-      <option value="HA">HA</option>
-      <option value="IA">IA</option>
-      <option value="ID">ID</option>
-      <option value="IL">IL</option>
-      <option value="IN">IN</option>
-      <option value="KS">KS</option>
-      <option value="KY">KY</option>
-      <option value="LA">LA</option>
-      <option value="MA">MA</option>
-      <option value="MD">MD</option>
-      <option value="ME">ME</option>
-      <option value="MI">MI</option>
-      <option value="MN">MN</option>
-      <option value="MO">MO</option>
-      <option value="MS">MS</option>
-      <option value="MT">MT</option>
-      <option value="NC">NC</option>
-      <option value="ND">ND</option>
-      <option value="NE">NE</option>
-      <option value="NH">NH</option>
-      <option value="NJ">NJ</option>
-      <option value="NM">NM</option>
-      <option value="NV">NV</option>
-      <option value="NY">NY</option>
-      <option value="OH">OH</option>
-      <option value="OK">OK</option>
-      <option value="OR">OR</option>
-      <option value="PA">PA</option>
-      <option value="RI">RI</option>
-      <option value="SC">SC</option>
-      <option value="SD">SD</option>
-      <option value="TN">TN</option>
-      <option value="TX">TX</option>
-      <option value="UT">UT</option>
-      <option value="VA">VA</option>
-      <option value="VT">VT</option>
-      <option value="WA">WA</option>
-      <option value="WI">WI</option>
-      <option value="WV">WV</option>
-      <option value="WY">WY</option>
-    </select>
-  </label>
+  <div id="form-part1">
+    <label>I don't want Trump to win, but I want to vote for </label>
+    <br/>
+    <input type="radio" name="desired_candidate" value="johnson"> Gary Johnson <br/>
+    <input type="radio" name="desired_candidate" value="stein"> Jill Stein <br/>
+    <input type="radio" name="desired_candidate" value="hillary"> Hillary Clinton <br/>
+  </div>
+  
 
-  <br/><br/> <!-- TODO -->
+  <div id="form-part2">
+    <p class="message"></p>
 
-  <h3 id="user-message"></h3>
+    <label> I live in:
+      <select name="user_state">
+        <option value="">Select State</option>
+        <option value="AL">AL</option>
+        <option value="AK">AK</option>
+        <option value="AR">AR</option>
+        <option value="AZ">AZ</option>
+        <option value="CA">CA</option>
+        <option value="CO">CO</option>
+        <option value="CT">CT</option>
+        <option value="DC">DC</option>
+        <option value="DE">DE</option>
+        <option value="FL">FL</option>
+        <option value="GA">GL</option>
+        <option value="HA">HA</option>
+        <option value="IA">IA</option>
+        <option value="ID">ID</option>
+        <option value="IL">IL</option>
+        <option value="IN">IN</option>
+        <option value="KS">KS</option>
+        <option value="KY">KY</option>
+        <option value="LA">LA</option>
+        <option value="MA">MA</option>
+        <option value="MD">MD</option>
+        <option value="ME">ME</option>
+        <option value="MI">MI</option>
+        <option value="MN">MN</option>
+        <option value="MO">MO</option>
+        <option value="MS">MS</option>
+        <option value="MT">MT</option>
+        <option value="NC">NC</option>
+        <option value="ND">ND</option>
+        <option value="NE">NE</option>
+        <option value="NH">NH</option>
+        <option value="NJ">NJ</option>
+        <option value="NM">NM</option>
+        <option value="NV">NV</option>
+        <option value="NY">NY</option>
+        <option value="OH">OH</option>
+        <option value="OK">OK</option>
+        <option value="OR">OR</option>
+        <option value="PA">PA</option>
+        <option value="RI">RI</option>
+        <option value="SC">SC</option>
+        <option value="SD">SD</option>
+        <option value="TN">TN</option>
+        <option value="TX">TX</option>
+        <option value="UT">UT</option>
+        <option value="VA">VA</option>
+        <option value="VT">VT</option>
+        <option value="WA">WA</option>
+        <option value="WI">WI</option>
+        <option value="WV">WV</option>
+        <option value="WY">WY</option>
+      </select>
+    </label>
+  </div>
 
-  <label>My email is:
-    <input type="text" name="email" placeholder="email">
-  </label>
+  <h3 id="message-to-user"></h3>
+
+  <div id="form-part3">
+    <label>My email is:
+      <input type="text" name="email" placeholder="email">
+    </label>
+  </div>
 
   <button>Submit</button>
 </form>
@@ -219,6 +238,7 @@
     // "California",
     // "Connecticut",
     // "Delaware",
+    // "Washingtong DC",
     // "Hawaii",
     // "Maine",
     // "Maryland",
@@ -233,6 +253,7 @@
     // "Washington"
     "CA",
     "CT",
+    "DC",
     "DE",
     "HA",
     "ME",
@@ -295,25 +316,55 @@
   ];
 
   $(document).ready(function(){
-    let inputUserState = $('select[name="user_state"]'),
-        usStatesAbbreviation = "";
+    let input3rdPartyCandidate = $('input[name="desired_candidate"]'),
+        inputUserState = $('select[name="user_state"]'),
+        usStatesAbbreviation = "",
+        formPt2 = $('#form-part2'),
+        formPt3 = $('#form-part3');
+
+    /* hide form parts */
+    formPt2.hide();
+    formPt3.hide();
+
+    /* PART 2 */
+    /* bind value change for 3rd party canddiates */
+    input3rdPartyCandidate.change(function(){
+      formPt2.hide();    
+      let desiredCandidate = $('input[name="desired_candidate"]:checked').val();
+      showFormPt2(desiredCandidate, formPt2);      
+    });
 
 
-
+    /* PART 3 */
     /* bind value change for user states */
     inputUserState.change(function(){
+      formPt3.hide();
       setInputUserState(inputUserState);
-      
+      formPt3.show();      
     });
     
+    /* bind submit: make sure all thigns are okay to send */
 
   });
 
   function setInputUserState(inputUserState) {
     let userStateAbbrev = inputUserState.val(), // "CA"
-        politicalLeaning = '';
+        politicalLeaning = checkStateColor(userStateAbbrev),
+        msgToUser;
     
-    /* check if swing, blue, or red */
+    /* make message to user about their state's political leaning */
+    msgToUser = informStateColor(userStateAbbrev, politicalLeaning);
+
+    /* update message on screen */
+    $('#message-to-user').html(msgToUser);
+
+    /* unhide inputs */
+    //email
+    //candidate
+  }
+
+  function checkStateColor(userStateAbbrev) {
+    let politicalLeaning = ""
     if ( SWING_STATES.indexOf( userStateAbbrev ) !== -1 ) {
       politicalLeaning = 'SWING';
     } else if ( BLUE_STATES.indexOf( userStateAbbrev ) !== -1 ) {
@@ -321,16 +372,39 @@
     } else if ( RED_STATES.indexOf( userStateAbbrev ) !== -1 ) {
       politicalLeaning = 'RED';
     }
+    return politicalLeaning;
+  }
+  function informStateColor(userStateAbbrev, politicalLeaning) {
+    let msg = 'You live in ' + userStateAbbrev + ', a ' + politicalLeaning + ' state. \n',
+        explanation = '';
+    
+    if (politicalLeaning === 'SWING') {
+      explanation += "This means your vote is VITAL in keeping Trump out of the White house! Enter your email below and we'll pair you with someone in a NON-SWING state so you can trade votes and help stop Trump!";
+    } else {
+      explanation += "This means you can safely vote third party for someone in a SWING state. Enter your email below and we'll pair you with someone in a SWING state so you can trade votes and help stop Trump!";
+    }
+    msg += explanation;
 
-    /* make message to user about their state's political leaning */
-    informUser(politicalLeaning);
+    return msg;
   }
 
-  function informUser(politicalLeaning) {
-    let msg = 'You live in a ' + politicalLeaning + ' state.';
-    console.log(msg);
+  function showFormPt2(desiredCandidate, formPt2) {
+    let msg = "";
 
+    if (desiredCandidate === 'hillary') {
+      msg = "Yeah! #ImWithHer too! Let's see if your state is a SWING state. ";
+    } else {
+      msg = "Good for you! 3rd parties are great, but we can't let Trump win. Let's see if you live in a SWING state where voting 3rd party might result in Trump winning. ";
+    }
+    msg += "Where do you live?"
+
+    formPt2.find('.message').html(msg);
     
+    formPt2.show();
+  }
+
+  function showFormPt3() {
+
   }
 
 

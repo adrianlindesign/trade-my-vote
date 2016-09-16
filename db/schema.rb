@@ -11,15 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160916161501) do
+ActiveRecord::Schema.define(version: 20160916200323) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "voters", force: true do |t|
-    t.string "email"
-    t.string "user_state"
-    t.string "candidate"
+    t.string  "email"
+    t.string  "user_state"
+    t.string  "desired_candidate"
+    t.boolean "paired"
   end
 
 end

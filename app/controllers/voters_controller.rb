@@ -3,7 +3,7 @@ class VotersController < ApplicationController
     new_voter = Voter.create(
       email: params["email"],
       user_state: params["user_state"],
-      candidate: params["candidate"]
+      desired_candidate: params["desired_candidate"]
     )
   end
 
@@ -11,5 +11,5 @@ class VotersController < ApplicationController
     #match the voters
   end
 
-  
+
 end
