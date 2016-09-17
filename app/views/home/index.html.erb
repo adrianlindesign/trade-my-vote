@@ -383,7 +383,7 @@
     let msg = "";
 
     if (desiredCandidate === 'hillary') {
-      msg = "Yeah! #ImWithHer too! Let's see if your state is a SWING state. ";
+      msg = "Yeah! #ImWithHer too! Let's see if your state is a SWING state or a SOLID state. ";
     } else {
       msg = "Good for you! 3rd parties are great, but we can't let Trump win. Let's see if you live in a SWING state where voting 3rd party might result in Trump winning. ";
     }
@@ -406,17 +406,24 @@
     }
     return politicalLeaning;
   }
+
   function informStateColor(userStateAbbrev, politicalLeaning) {
-    let msg = 'You live in ' + userStateAbbrev + ', a ' + politicalLeaning + ' state. \n',
+    // let msg = 'You live in ' + userStateAbbrev + ', a <span style="color:' + politicalLeaning + '">' +politicalLeaning + '</span> state. \n',
+    //     explanation = '';
+
+    let msg = '',
+        msgColor = '',
         explanation = '';
     
     if (politicalLeaning === 'SWING') {
+      msgColor = 'purple';
       explanation += "This means your vote is VITAL in keeping Trump out of the White house! Enter your email below and we'll pair you with someone in a NON-SWING state so you can trade votes and help stop Trump!";
     } else {
+      msgColor = politicalLeaning;
       explanation += "This means the outcome of your state won't change if you help someone vote 3rd party. Enter your email below and we'll pair you with someone in a SWING state so you can trade votes and help stop Trump!";
     }
-    msg += explanation;
-
+    
+    msg += 'You live in ' + userStateAbbrev + ', a <span style="color:' + msgColor + '">' +politicalLeaning + '</span> state. \n' + explanation;
     return msg;
   }
 
