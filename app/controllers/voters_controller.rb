@@ -33,47 +33,54 @@ class VotersController < ApplicationController
     #arrays 
     voter_pairs = []
 
-    swing_state_3rd_party_voters = []
-    solid_state_hillary_voters = []
+    swing_3P_voters = []
+    solid_hillary_voters = []
     
-    solid_state_3rd_party_voters = []
-    swing_state_hillary_voters = []
+    solid_3P_voters = [] #not really useful
+    swing_hillary_voters = [] #not really useful
     
 
    
-    #push into arrays
+    #sort voter types into arrays
     unpaired_voters.each do |voter|
 
       if swing_states.include?( voter.user_state )
         if voter.desired_candidate == 'hillary'
-          swing_state_hillary_voters << voter
+          swing_hillary_voters << voter
         else
-          swing_state_3rd_party_voters << voter
+          swing_3P_voters << voter
         end
       else 
         if voter.desired_candidate == 'hillary'
-          solid_state_hillary_voters << voter
+          solid_hillary_voters << voter
         else
-          solid_state_3rd_party_voters << voter
+          solid_3P_voters << voter
         end
       end
     end
       
-    binding.pry
 
-    #create pairs ( swing-state-3rd-party + solid-state-hillary)
-    swing_state_3rd_party_voters.each do |voter|
-      # create pair hash
+
+    # create pair hash of 3rd party in swing state and hillary in solid state
+    i = 0
+    while i < swing_3P_voters.length && solid_hillary_voters[i] != nil
+      
+      #make paired == true 
+      swing_3P_voters[i].update(paired: true)
+      solid_hillary_voters[i].update(paired: true)
 
       # put pair details into hash
+      pair = {}
+      pair[:swing_voter] = swing_3P_voters[i].as_json
+      pair[:solid_voter] = solid_hillary_voters[i].as_json 
+      voter_pairs << pair
 
-      #push hash into voter_pairs array
-
-      #make paired == true && remove from voters arrays (may need to use for loop)
+      i += 1
     end
 
-    #send email
-    #paired = true;
+    #now send off emails( voter_pairs, swing_hillary_voters, solid_3P_voters)
+
+    
 
     redirect_to '/'
   end
