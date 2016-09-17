@@ -79,9 +79,12 @@ class VotersController < ApplicationController
     end
 
     #now send off emails( voter_pairs, swing_hillary_voters, solid_3P_voters)
+    binding.pry
+
+    #for voter_pairs, send them email:
 
 
-    #for voter_pairs, send them email
+
 
 
     redirect_to '/'
