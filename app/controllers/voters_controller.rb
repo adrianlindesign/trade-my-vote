@@ -90,13 +90,6 @@ class VotersController < ApplicationController
     redirect_to '/'
   end
 
-  def email
-    Mail.deliver do
-      from 'info@trademyvote.us'
-      to 'here.comes.adrian@gmail.com'
-      subject 'test Mail gem subject'
-      body 'test Mail gem body'
-    end
-  end
+ 
 
 end
