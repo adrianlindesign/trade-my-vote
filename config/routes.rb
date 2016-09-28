@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   post '/voters' => 'voters#create'
 
   get '/match' => 'voters#match'
+  
+  get '/email' => 'email#test'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

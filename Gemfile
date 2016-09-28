@@ -29,7 +29,11 @@ gem 'spring',        group: :development
 gem 'pry-rails'
 gem 'rufus-scheduler'
 
-# gem 'mail'
+# For windows
+gem 'tzinfo-data'
+
+gem 'mailgun-ruby'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
