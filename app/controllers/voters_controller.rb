@@ -1,3 +1,4 @@
+require "email_helper"
 class VotersController < ApplicationController
   def create
     new_voter = Voter.create(
@@ -67,6 +68,9 @@ class VotersController < ApplicationController
 
   def match_voters(swing_3p, solid_hillary)
       do_update = true
+
+      # Moved this above the database update - since we only want to update the database if the email succeeds
+      EmailHelper.email_matches(swing_3p, solid_hillary)
 
       #make paired == true 
       if do_update
